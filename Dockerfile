@@ -17,8 +17,8 @@ RUN wget -q  https://download.libsodium.org/libsodium/releases/libsodium-1.0.10.
     && ldconfig \
     && cd /tmp
 
-RUN wget -q http://download.zeromq.org/zeromq-4.1.3.tar.gz \
-    && tar zxvf zeromq-4.1.3.tar.gz \
+RUN wget -q http://download.zeromq.org/zeromq-4.1.4.tar.gz \
+    && tar zxvf zeromq-4.1.4.tar.gz \
     && cd zeromq* \
     && ./configure --with-libsodium && make && make check \
     && make install \
