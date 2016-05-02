@@ -15,8 +15,8 @@
 
 
 awsgo:
-  container_name: awsgo
-  image: golang:1.6-alpine
+  container_name: gobot
+  image: golang:1.6.2-alpine
   volumes:
-    - .:/go/src/github.com/junhuqc/awsgo
+    - .:/go/src/github.com/junhuqc/gobot
   command: tail -f /dev/null
