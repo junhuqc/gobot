@@ -1,7 +1,7 @@
 FROM ubuntu:14.04.4
 
 COPY . /go/src/github.com/junhuqc/gobot
-RUN apt-get update && apt-get install -y pkg-config wget
+RUN apt-get update && apt-get install -y pkg-config wget build-essential
 
 WORKDIR /tmp
 
