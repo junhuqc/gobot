@@ -1,0 +1,9 @@
+language: go
+go:
+  - 1.6.2
+
+services:
+  - docker
+
+install:
+  - docker build -t temp .
