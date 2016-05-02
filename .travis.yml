@@ -6,4 +6,8 @@ services:
   - docker
 
 install:
-  - docker build -t temp .
+  - docker build -t tempimg .
+  - docker run -d -p 127.0.0.1:80:80 --name testing tempimg
+
+script:
+  - docker ps | grep -q testing
