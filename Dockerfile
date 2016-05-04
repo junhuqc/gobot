@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 ENV GOPATH /go
 ENV WORKINGPATH $GOPATH/src/github.com/junhuqc/gobot
 
+COPY ./docker-entrypoint.sh /
 COPY . $WORKINGPATH
 
 RUN apt-get update \
@@ -11,4 +12,4 @@ RUN apt-get update \
 
 WORKDIR $WORKINGPATH
 
-ENTRYPOINT ["tail -f /dev/null"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
