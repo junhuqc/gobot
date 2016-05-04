@@ -11,4 +11,4 @@ RUN apt-get update \
 
 WORKDIR $WORKINGPATH
 
-CMD ["tail -f /dev/null"]
+ENTRYPOINT ["tail -f /dev/null"]
