@@ -1,10 +1,14 @@
-FROM ubuntu:14.04.4
+FROM ubuntu:16.04
 
-RUN add-apt-repository ppa:chris-lea/zeromq \
-    && apt-get update \
-    && apt-get install -y software-properties-common python-software-properties \
-    && apt-get update \
-    && apt-get install -y libzmq3-dbg libzmq3-dev libzmq3
+ENV GOPATH /go
+ENV WORKINGPATH $GOPATH/src/github.com/junhuqc/gobot
 
+COPY . $WORKINGPATH
+
+RUN apt-get update \
+    && apt-get install -y libczmq-dev golang
+
+
+WORKDIR $WORKINGPATH
 
 CMD ["tail -f /dev/null"]
